@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 /*void main() {
@@ -15,9 +17,10 @@ class Ma extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('big tits'),
+          title: const Text('big tits'),
         ),
         body: Column(
+          // ignore: prefer_const_literals_to_create_immutables
           children: [
             Text('questions'),
             RaisedButton(
@@ -30,7 +33,7 @@ class Ma extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: null,
-              child: Text('elavated'),
+              child: const Text('elavated'),
             ),
             OutlinedButton(
               onPressed: null,
