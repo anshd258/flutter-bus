@@ -4,6 +4,7 @@ import 'package:solana/solana.dart';
 import 'package:http/http.dart';
 import 'package:flutter/material.dart';
 
+
 /*void main() {
   runApp(Ma());
 }*/
@@ -14,6 +15,8 @@ class Ma extends StatefulWidget {
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return MaState();
+    GetAccountInfoConfig(
+        commitment: Commitment.finalized, encoding: Encoding.jsonParsed);
   }
 }
 
@@ -46,7 +49,7 @@ class MaState extends State<Ma> {
           children: [
             Text(question[questionind]),
             RaisedButton(
-              onPressed: ans,
+              onPressed: null,
               child: Text('anser1'),
             ),
             Text(question[questionind]),
@@ -64,7 +67,7 @@ class MaState extends State<Ma> {
             ),
             Text(question[questionind]),
             OutlinedButton(
-              onPressed: null,
+              onPressed: ans,
               child: Text('outlined'),
             )
           ],
