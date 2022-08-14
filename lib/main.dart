@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import './question.dart';
+import './ansd.dart';
 
 /*void main() {
   runApp(Ma());
@@ -25,48 +26,56 @@ class _MaState extends State<Ma> {
       else
         _questionind = 0;
     });
-
-    print('chossen one');
   }
 
   @override
   Widget build(BuildContext text) {
     var question = [
-      'what\'s your fav caracter?',
-      'what\'s your fav animal',
-      'wat\'s your fav manga'
+      // crated a list of map
+      {
+        'text': 'what\'s your fav color?',
+        'answer': [
+          'black',
+          'red',
+          'green',
+        ]
+      },
+      {
+        'text': 'wat\'s your fav ranger',
+        'answer': [
+          'ninja',
+          'punja',
+          'aruko',
+          'nexuko',
+        ]
+      },
+      {
+        'text': 'wat\'s your fav manga',
+        'answer': [
+          'solo leveling',
+          'demon slaeyr',
+          'full metal alcamist',
+          'erased',
+        ]
+      },
     ];
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(234, 95, 255, 151),
+        backgroundColor: Color.fromARGB(234, 202, 202, 202),
         appBar: AppBar(
           title: const Text('big tits'),
         ),
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            uestion(question[_questionind]),
-            RaisedButton(
-              onPressed: null,
-              child: Text('anser1'),
-            ),
-            TextButton(
-              onPressed: () => print('coosen bitch'),
-              child: Text('press'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                _ans();
-
-                print('cooesn already');
-              },
-              child: const Text('elavated'),
-            ),
-            OutlinedButton(
-              onPressed: _ans,
-              child: Text('outlined'),
-            )
+            uestion(question[_questionind]['text']
+                as String), //sending list id (_questionind) and key 'text'to uestion constructor in question.dart
+            ...(question[_questionind]['answer'] as List<
+                    String>) // creating a map of list wic olds a list and sending it to ans function in ansd.dart
+                .map((answers) {
+              return ans(_ans, answers); // sending a list to te constructor wic
+            }).toList(),
           ],
         ),
       ),
