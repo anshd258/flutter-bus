@@ -8,6 +8,14 @@ class uestion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(qna);
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.all(5),
+      child: Text(
+        qna,
+        style: TextStyle(fontSize: 15),
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 }
