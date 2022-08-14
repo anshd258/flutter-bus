@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, unused_import
-import 'package:solana/dto.dart';
-import 'package:solana/solana.dart';
-import 'package:http/http.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+import './question.dart';
 
 /*void main() {
   runApp(Ma());
@@ -14,17 +12,18 @@ class Ma extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MaState();
-    GetAccountInfoConfig(
-        commitment: Commitment.finalized, encoding: Encoding.jsonParsed);
+    return _MaState();
   }
 }
 
-class MaState extends State<Ma> {
-  var questionind = 0;
-  void ans() {
+class _MaState extends State<Ma> {
+  var _questionind = 0;
+  void _ans() {
     setState(() {
-      if (questionind < 2) questionind = questionind + 1;
+      if (_questionind < 2)
+        _questionind = _questionind + 1;
+      else
+        _questionind = 0;
     });
 
     print('chossen one');
@@ -40,34 +39,32 @@ class MaState extends State<Ma> {
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(234, 90, 90, 91),
+        backgroundColor: Color.fromARGB(234, 95, 255, 151),
         appBar: AppBar(
           title: const Text('big tits'),
         ),
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text(question[questionind]),
+            uestion(question[_questionind]),
             RaisedButton(
               onPressed: null,
               child: Text('anser1'),
             ),
-            Text(question[questionind]),
             TextButton(
               onPressed: () => print('coosen bitch'),
               child: Text('press'),
             ),
             ElevatedButton(
               onPressed: () {
-                ans();
+                _ans();
 
                 print('cooesn already');
               },
               child: const Text('elavated'),
             ),
-            Text(question[questionind]),
             OutlinedButton(
-              onPressed: ans,
+              onPressed: _ans,
               child: Text('outlined'),
             )
           ],
