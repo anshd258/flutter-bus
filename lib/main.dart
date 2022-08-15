@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:test_app/ans.dart';
+import 'package:test_app/if_part.dart';
 import './question.dart';
 import './ansd.dart';
 
@@ -62,23 +64,20 @@ class _MaState extends State<Ma> {
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(234, 202, 202, 202),
-        appBar: AppBar(
-          title: const Text('big tits'),
-        ),
-        body: Column(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            uestion(question[_questionind]['text']
-                as String), //sending list id (_questionind) and key 'text'to uestion constructor in question.dart
-            ...(question[_questionind]['answer'] as List<
-                    String>) // creating a map of list wic olds a list and sending it to ans function in ansd.dart
-                .map((answers) {
-              return ans(_ans, answers); // sending a list to te constructor wic
-            }).toList(),
-          ],
-        ),
-      ),
+          backgroundColor: Color.fromARGB(234, 202, 202, 202),
+          appBar: AppBar(
+            title: const Text(
+              'FUNCTIONAL TEST',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+                color: Color.fromARGB(193, 184, 166, 153),
+              ),
+            ),
+          ),
+          body: _questionind < 2
+              ? ifpart(questions: question, answer: _ans, queid: _questionind)
+              : elsepart(_ans)),
     );
   }
 }

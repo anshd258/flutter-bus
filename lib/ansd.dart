@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class ans extends StatelessWidget {
-  final void Function() selectli; //pointer to function
+  final VoidCallback selectli; //pointer to function
   final String some_sit; //list of strings from main .dart
   ans(this.selectli, this.some_sit); //constructor
   @override

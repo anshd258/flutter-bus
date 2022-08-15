@@ -10,6 +10,7 @@ class uestion extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.all(5),
       child: Text(
+        //giving questions
         qna,
         style: TextStyle(fontSize: 15),
         textAlign: TextAlign.center,
