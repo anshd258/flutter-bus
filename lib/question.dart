@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class uestion extends StatelessWidget {
@@ -8,11 +10,11 @@ class uestion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.all(5),
+      margin: EdgeInsets.all(3),
       child: Text(
         //giving questions
         qna,
-        style: TextStyle(fontSize: 15),
+        style: TextStyle(fontSize: 10),
         textAlign: TextAlign.center,
       ),
     );

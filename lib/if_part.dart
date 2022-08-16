@@ -5,7 +5,7 @@ import 'question.dart';
 class ifpart extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final queid;
-  final VoidCallback answer;
+  final Function answer;
 
   ifpart({required this.questions, required this.answer, required this.queid});
 
@@ -18,9 +18,15 @@ class ifpart extends StatelessWidget {
         uestion(questions[queid]['text']!
             as String), //sending list id (_questionind) and key 'text'to uestion constructor in question.dart
         ...(questions[queid]['answer'] as List<
-                String>) // creating a map of list wic olds a list and sending it to ans function in ansd.dart
+                Map<String,
+                    Object>>) // creating a map of list wic olds a list and sending it to ans function in ansd.dart
             .map((answers) {
-          return ans(answer, answers); // sending a list to te constructor wic
+          return ans(
+              () => answer(
+                  answers['score'] as int), //created te anonaymus function
+
+              answers['textt']
+                  as String); // sending a list to te constructor wic
         }).toList(),
       ],
     );

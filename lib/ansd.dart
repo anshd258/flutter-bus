@@ -15,9 +15,9 @@ class ans extends StatelessWidget {
       child: TextButton(
         onPressed: selectli, //calling te function pointer
         style: TextButton.styleFrom(
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(3),
           primary: Color.fromARGB(255, 70, 59, 86),
-          textStyle: const TextStyle(fontSize: 20),
+          textStyle: const TextStyle(fontSize: 15),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(5))),
           backgroundColor: Color.fromARGB(241, 11, 255, 109),
