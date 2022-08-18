@@ -35,7 +35,6 @@ class _MaState extends State<Ma> {
 
       _questionind = _questionind + 1;
       if (_questionind <= 3) {
-        print(_questionind);
       } else {
         _questionind = 0;
       }
@@ -85,19 +84,18 @@ class _MaState extends State<Ma> {
               'FUNCTIONAL TEST',
               textAlign: TextAlign.right,
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 20,
                 color: Color.fromARGB(255, 83, 46, 20),
                 fontWeight: FontWeight.bold,
-                wordSpacing: 1.5,
-                letterSpacing: 2.0,
+                wordSpacing: 3,
+                letterSpacing: 3,
               ),
             ),
           ),
         ),
         body: _questionind <= 2
-            ? ifpart(questions: question, answer: _ans, queid: _questionind)
+            ? ifpart(questions: question, answ: _ans, queid: _questionind)
             : elsepart(
-                test: _ans,
                 puss: _luma,
                 score: _total,
               ),

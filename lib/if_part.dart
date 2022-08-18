@@ -5,9 +5,9 @@ import 'question.dart';
 class ifpart extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final queid;
-  final Function answer;
+  final Function answ;
 
-  ifpart({required this.questions, required this.answer, required this.queid});
+  ifpart({required this.questions, required this.answ, required this.queid});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class ifpart extends StatelessWidget {
                 Map<String,
                     Object>>) // creating a map of list wic olds a list and sending it to ans function in ansd.dart
             .map((answers) {
-          return ans(
-              () => answer(
-                  answers['score'] as int), //created te anonaymus function
+          return ansh(
+              () =>
+                  answ(answers['score'] as int), //created te anonaymus function
 
               answers['textt']
                   as String); // sending a list to te constructor wic

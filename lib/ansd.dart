@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 
-class ans extends StatelessWidget {
+class ansh extends StatelessWidget {
   final VoidCallback selectli; //pointer to function
   final String some_sit; //list of strings from main .dart
-  ans(this.selectli, this.some_sit); //constructor
+  ansh(this.selectli, this.some_sit); //constructor
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,16 +15,16 @@ class ans extends StatelessWidget {
       child: TextButton(
         onPressed: selectli, //calling te function pointer
         style: TextButton.styleFrom(
-          padding: EdgeInsets.all(3),
+          padding: EdgeInsets.all(2),
           primary: Color.fromARGB(255, 70, 59, 86),
           textStyle: const TextStyle(fontSize: 15),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5))),
+              borderRadius: BorderRadius.all(Radius.circular(2))),
           backgroundColor: Color.fromARGB(241, 11, 255, 109),
         ),
         child: Text(some_sit), //list of string passing to text field
       ),
-      margin: EdgeInsets.all(3),
+      margin: EdgeInsets.all(2),
     );
   }
 }
